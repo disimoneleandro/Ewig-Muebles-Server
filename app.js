@@ -29,17 +29,17 @@ app.use('/home', homeRoutes);
 app.use('/productos', productosRoutes);
 app.use('/contacto', contactoRoutes);
 
-app.get('/home', function (req, res) {
-  res.send('Soy el HOME')
-});
+// app.get('/home', function (req, res) {
+//   res.send('Soy el HOME')
+// });
 
-app.get('/productos', function (req, res) {
-  res.send('Soy pagina de productos')
-})
+// app.get('/productos', function (req, res) {
+//   res.send('Soy pagina de productos')
+// })
 
-app.get('/contacto', function (req, res) {
-  res.send('Soy pagina de contacto')
-})
+// app.get('/contacto', function (req, res) {
+//   res.send('Soy pagina de contacto')
+// })
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
