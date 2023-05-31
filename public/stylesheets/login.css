@@ -1,0 +1,39 @@
+.form-container {
+    display: flex;
+    justify-content:center;
+    width: 100%;
+    background-color: rgb(235, 93, 93);
+
+}
+
+.form-login{
+    display:flex;
+    flex-direction:column;
+    margin: 20px;
+    width: 50%;
+}
+
+input {
+    margin-bottom: 20px;
+    height: 35px;
+    border-radius: 5px;
+    border:none;
+}
+
+label{
+    font-size:20px;
+    margin-bottom:5px;
+    font-weight: bold;
+}
+
+.div-btn{
+    display: flex;
+    justify-content:center;
+}
+
+button{
+    font-size:15px;
+    width:20%;
+    height: 40px;
+    border-radius: 15px;
+}
