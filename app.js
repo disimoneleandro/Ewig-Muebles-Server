@@ -4,12 +4,17 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+
+require('dotenv').config();
+var session = require('express-session');
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/admin/login');
 var homeRoutes = require('./routes/home');
 var productosRoutes = require('./routes/productos');
 var contactoRoutes = require('./routes/contacto');
+var adminRoutes = require('./routes/admin/novedades');
 
 
 var app = express();
@@ -24,12 +29,59 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use(session({
+  secret: 'qwertyuiopasdfghjklñ',
+  resave: false,
+  saveUninitialized: true
+  }
+));
+
+// middleware de sesion
+secured = async (req, res, next) => {
+  try {
+    console.log(req.session.id_usuario);
+    if( req.session.id_usuario) {
+      next();
+    } else {
+      res.redirect('/admin/login');
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+
+
+// app.use('/', indexRouter);
+// app.use('/users', usersRouter);
+
+app.get('/',function (req, res) {
+  var conocido = Boolean(req.session.nombre);
+
+  res.render('admin/login' , {
+    title: 'Sesion de express',
+    conocido: conocido,
+    nombre: req.session.nombre
+  });
+});
+
+app.post('/ingresar', function (req, res) {
+  if (req.body.nombre) {
+    req.session.nombre = req.body.nombre
+  }
+  res.redirect('/');
+});
+
+app.get('/salir' , function (req, res) {
+  req.session.destroy();
+  res.redirect('/admin/login');
+})
+
 app.use('/admin/login' , loginRouter);
 app.use('/home', homeRoutes);
 app.use('/productos', productosRoutes);
 app.use('/contacto', contactoRoutes);
+app.use('/admin/novedades', secured, adminRoutes);
 
 // app.get('/home', function (req, res) {
 //   res.send('Soy el HOME')

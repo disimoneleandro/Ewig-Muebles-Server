@@ -1,12 +1,16 @@
-<h1>Hola soy la pag del login</h1>
-    <div class="form-container">
-        <form class="form-login">
-            <label for="login">Usuario</label>
-            <input type="text">
-            <label for="password">Contraseña</label>
-            <input type="password">
-            <div class="div-btn">
-                <button type="submit">Enviar</button>
-            </div>
-        </form>
+<h1>Login Ewig</h1>
+
+<div class="form-container">
+    <form action="/admin/login" method="post" class="form-login">
+        <label for="login">Usuario</label>
+        <input type="text" name="usuario" autocomplete="off">
+        <label for="password">Contraseña</label>
+        <input type="password" name="password" autocomplete="off">
+    <div class="div-btn">
+        <button type="submit">Ingresar</button>
     </div>
+        </form>
+        {{#if error}}
+            <p>Usuario y/o password incorrecto</p>
+        {{/if}}
+</div>
