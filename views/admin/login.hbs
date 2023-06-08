@@ -2,15 +2,15 @@
 
 <div class="form-container">
     <form action="/admin/login" method="post" class="form-login">
-        <label for="login">Usuario</label>
-        <input type="text" name="usuario" autocomplete="off">
+        <label for="usuario">Usuario</label>
+        <input type="text" name="usuario">
         <label for="password">Contraseña</label>
-        <input type="password" name="password" autocomplete="off">
+        <input type="password" name="password">
     <div class="div-btn">
         <button type="submit">Ingresar</button>
     </div>
         </form>
-        {{#if error}}
-            <p>Usuario y/o password incorrecto</p>
-        {{/if}}
 </div>
+    {{#if error}}
+            <p>Usuario y/o password incorrecto</p>
+    {{/if}}

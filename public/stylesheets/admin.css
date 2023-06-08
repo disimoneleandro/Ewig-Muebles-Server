@@ -1,0 +1,25 @@
+.div-usuario {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px;
+}
+
+.h2-novedades{
+    display: flex;
+    justify-content:center;
+    margin-bottom: 30px;
+}
+
+.btn-cerrar-s{
+    margin-left:10px;
+}
+
+.div-listado{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-nuevo{
+    margin-bottom: 10px;
+}

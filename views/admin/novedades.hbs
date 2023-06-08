@@ -1,4 +1,32 @@
-<div>
+<div class="div-usuario">
     <p>Hola {{usuario}}</p>
-    <a href="/admin/login/logout">Cerrar Sesión</a>
+    <a class="btn-cerrar-s btn btn-sm btn-danger" href="/admin/login/logout">Cerrar Sesión</a>
+</div>
+<div class="conteiner-novedades">
+    <div>
+        <h2 class="h2-novedades">Listado de Novedades</h2>
+    </div>
+    <div class="div-listado">
+        <a class="btn-nuevo btn btn-success" href="/admin/novedades/agregar">Nuevo +</a>
+    </div>
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Titulo</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each novedades}}
+                <tr>
+                    <th scope="row">{{id}}</th>
+                    <td>{{titulo}}</td>
+                    <td><a class="btn btn-primary" style="margin-right: 10px;" href="">Editar</a><a class="btn btn-danger" href="">Eliminar</a></td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
 </div>
