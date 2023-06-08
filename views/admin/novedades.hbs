@@ -23,7 +23,9 @@
                 <tr>
                     <th scope="row">{{id}}</th>
                     <td>{{titulo}}</td>
-                    <td><a class="btn btn-primary" style="margin-right: 10px;" href="">Editar</a><a class="btn btn-danger" href="">Eliminar</a></td>
+                    <td><a class="btn btn-primary" style="margin-right: 10px;" href="/admin/novedades/modificar/{{id}}">Editar</a>
+                        <a class="btn btn-danger" href="/admin/novedades/eliminar/{{id}}">Eliminar</a>
+                    </td>
                 </tr>
                 {{/each}}
             </tbody>

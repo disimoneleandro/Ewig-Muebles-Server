@@ -40,6 +40,47 @@ router.post('/agregar' , async function(req, res, next) {
             message: 'No se cargo la novedad'
         })
     }
-})
+});
+
+router.get('/eliminar/:id', async (req, res) => {
+    var id = req.params.id;
+    await novedadesModel.deleteNovedadesById(id);
+    res.redirect('/admin/novedades');
+});
+
+
+/*get para mostrar el diseño*/
+router.get('/modificar/:id', async (req, res) => {
+    var id = req.params.id;
+    var novedad = await novedadesModel.getNovedadesById(id);
+
+    res.render('admin/modificar', {
+        layout: 'admin/layout',
+        novedad
+    });
+});
+
+/* Modificar */
+router.post('/modificar', async (req, res) => {
+    try {
+        var obj = {
+            titulo: req.body.titulo,
+            subtitulo : req.body.subtitulo,
+            cuerpo : req.body.cuerpo
+        }
+
+        await novedadesModel.modificarNovedadesById(obj, req.body.id);
+        res.redirect('/admin/novedades');
+
+    } catch (error) {
+        res.render('admin/modificar' , {
+            layout: 'admin/layout',
+            error : true,
+            message : 'No se modifico la novedad'
+        })
+    }
+});
+
+
 
 module.exports = router;
