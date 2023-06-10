@@ -7,6 +7,9 @@ var logger = require('morgan');
 
 require('dotenv').config();
 var session = require('express-session');
+var fileUpload = require('express-fileupload');
+
+var cors = require('cors');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -15,6 +18,7 @@ var homeRoutes = require('./routes/home');
 var productosRoutes = require('./routes/productos');
 var contactoRoutes = require('./routes/contacto');
 var adminRoutes = require('./routes/admin/novedades');
+var apiRouter = require('./routes/api');
 
 
 var app = express();
@@ -50,6 +54,11 @@ secured = async (req, res, next) => {
   }
 };
 
+app.use(fileUpload({
+  useTempFiles : true,
+  tempFileDir : '/temp'
+}));
+
 
 
 // app.use('/', indexRouter);
@@ -82,6 +91,7 @@ app.use('/home', homeRoutes);
 app.use('/productos', productosRoutes);
 app.use('/contacto', contactoRoutes);
 app.use('/admin/novedades', secured, adminRoutes);
+app.use('/api', cors(), apiRouter);
 
 // app.get('/home', function (req, res) {
 //   res.send('Soy el HOME')
