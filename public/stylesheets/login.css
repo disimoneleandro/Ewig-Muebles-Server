@@ -1,23 +1,53 @@
+.div-header{
+    background-color: #272727;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.img-logo{
+    width:350px;
+    height: 180px;
+}
+
+.body-container{
+    display: flex;
+    justify-content: center;
+}
+
 .form-container {
     display: flex;
+    flex-direction: column;
     justify-content:center;
-    width: 100%;
-    background-color: rgb(235, 93, 93);
-
+    align-items: center;
+    width: 30%;
+    height: 400px;
+    background-color: rgb(143, 143, 143);
+    margin: 40px;
+    border-radius: 5px;
+    border: 2px solid black;
 }
+
+.form-title{
+    background-color:tan;
+    width: 70%;
+    text-align: center;
+}
+
 
 .form-login{
     display:flex;
     flex-direction:column;
     margin: 20px;
-    width: 50%;
+    width: 80%;
 }
 
 input {
-    margin-bottom: 20px;
-    height: 35px;
-    border-radius: 5px;
-    border:none;
+   width: 100%;
+   margin-bottom: 20px;
+   border: none;
+   height: 40px;
+   border-radius: 3px;
 }
 
 label{
@@ -31,9 +61,51 @@ label{
     justify-content:center;
 }
 
-button{
-    font-size:15px;
-    width:20%;
-    height: 40px;
-    border-radius: 15px;
+.div-footer {
+    background-color:#272727;
+    display: flex;
+    justify-content:space-evenly;
+    margin-top: 15%;
+}
+
+.info-footer{
+    color:#fff;
+    padding: 20px;
+}
+
+.p-footer{
+    margin: 5px;
+    font-family: 'Fraunces', serif !important;
+    font-size:20px;
+}
+
+.div-icons{
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+}
+
+.icons-social{
+    margin-right: 10px;
+    font-size: 30px;
+    margin-top: 30px;
+}
+
+.face{
+    color:#3b5998;
+}
+
+.insta{
+border-radius: 50px;
+color: #fff;
+background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+box-shadow: 0px 3px 10px rgba(0,0,0,.25);
+}
+
+.p-error{
+    text-align: center;
+    font-weight: bold;
+    color:#fc2929;
+    margin-bottom: 100px;
+    font-size:25px;
 }

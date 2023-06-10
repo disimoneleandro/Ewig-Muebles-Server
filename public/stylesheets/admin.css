@@ -1,17 +1,38 @@
-.div-usuario {
-    display: flex;
-    justify-content: flex-end;
-    margin: 10px;
+.conteiner-novedades{
+    display:flex;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
-.h2-novedades{
+.p-usuario-novedades{
+    color: white;
+    font-size: 18px;
+    margin: auto;
+    font-weight: bold;
+}
+
+.div-h2{
     display: flex;
-    justify-content:center;
-    margin-bottom: 30px;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 .btn-cerrar-s{
     margin-left:10px;
+    font-size:17px;
+    margin: auto;
+    width: 100%;
+    background-color:tan;
+    border: none;
+    color: #272727;
+    font-weight: bold;
+}
+
+.icon-logout{
+    margin-right:10px;
+    font-size:20px;
+
 }
 
 .div-listado{
@@ -22,4 +43,29 @@
 
 .btn-nuevo{
     margin-bottom: 10px;
+    font-size: 17px;
+}
+
+.div-tabla{
+    display: flex;
+    justify-content:center;
+}
+
+.table{
+    width: 60%;
+}
+
+.div-btn-edit-delete{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.acciones{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.icon-agregar{
+    margin-right:10px;
+    font-size:20px;
 }
