@@ -1,8 +1,19 @@
+<div class="div-header">
+    <div>
+        <img class="img-logo" src="/images/logoEwig.png" alt="logo"/>
+    </div>
+    <div>
+        <p class="p-usuario-novedades">Bienvenido {{usuario}} !</p>
+        <a class="btn-cerrar-s btn btn-danger" href="/admin/login/logout">
+            <i class="icon-logout fa-solid fa-arrow-right-from-bracket"></i>Cerrar Sesión
+        </a>
+    </div>
+</div>
 <div class="container" style="margin:100px auto">
     <div class="row">
         <div class="col-6 offset-3">
             <h2>Modificar novedad</h2>
-            <form action="/admin/novedades/modificar" method="post">
+            <form action="/admin/novedades/modificar" method="post" enctype="multipart/form-data">
                 <input type="hidden" value="{{novedad.id}}" name="id">
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label"></label>
@@ -11,6 +22,16 @@
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label"></label>
                     <input type="text" name="subtitulo" value="{{novedad.subtitulo}}" class="form-control" id="exampleFormControlInput1" placeholder="Subtitulo">
+                </div>
+                <div class="form-group">
+                    <p>
+                        <label for="">Imagen :<input type="file" name="imagen" id="imagen" /></label>
+                    </p>
+                    <p>
+                        <label><input type="checkbox" name="img_delete" value="1">
+                        Eliminar imagen actual ?</label>
+                        <input type="hidden" name="img_original" value="{{novedad.img_id}}">
+                    </p>
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label"></label>

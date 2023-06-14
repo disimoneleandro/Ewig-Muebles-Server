@@ -1,3 +1,13 @@
+<script type="text/javascript">
+    function confirmDelete() {
+        var respuesta = confirm('Se eliminará novedad, desea continuar ?');
+        if(respuesta == true) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+</script>
 <div class="div-header">
     <div>
         <img class="img-logo" src="/images/logoEwig.png" alt="logo"/>
@@ -20,7 +30,7 @@
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Titulo</th>
-                {{!-- <th scope="col">Imagen</th> --}}
+                <th scope="col">Imagen</th>
                 <th class="acciones" scope="col">Acciones</th>
             </tr>
         </thead>
@@ -29,9 +39,10 @@
             <tr>
                 <th scope="row">{{id}}</th>
                 <td>{{titulo}}</td>
+                <td>{{{imagen}}}</td>
                 <td class="div-btn-edit-delete">
                     <a class="btn btn-info" style="margin-right: 10px;" href="/admin/novedades/modificar/{{id}}"><i class="fa-solid fa-pencil"></i></a>
-                    <a class="btn btn-danger" href="/admin/novedades/eliminar/{{id}}"><i class="fa-solid fa-trash"></i></a>
+                    <a class="btn btn-danger" onclick="return confirmDelete()" href="/admin/novedades/eliminar/{{id}}"><i class="fa-solid fa-trash"></i></a>
                 </td>
             </tr>
             {{/each}}

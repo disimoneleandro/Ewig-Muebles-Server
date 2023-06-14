@@ -55,15 +55,15 @@
     width: 60%;
 }
 
-.div-btn-edit-delete{
+/* .div-btn-edit-delete{
     display: flex;
     justify-content: flex-end;
-}
+} */
 
-.acciones{
+/* .acciones{
     display: flex;
     justify-content: flex-end;
-}
+} */
 
 .icon-agregar{
     margin-right:10px;
